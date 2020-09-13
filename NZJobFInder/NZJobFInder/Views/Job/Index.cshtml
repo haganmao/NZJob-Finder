@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container" style="background-color:#e5e6f1;width:100%;margin-top:52px">
+    <form method="post" class="formaddJob" id="form_addJob" onsubmit="alert('The new job vacancy has been added! Thank you')" action="~/Job/jobpass">
+        <div class="form-group">
+            <p id="jobpasssubtitle">Please add new job here</p>
+
+            <label for="jtitle">Job Title</label>
+            <input id="jtitle" type="text" class="input-control form-control" name="jobTitle" placeholder="Job Title" required autofocus />
+
+            <label for="jrespon">Job Responsibilities</label>
+            <textarea id="jrespon" type="textarea" style="font-size:small" class="input-control form-control" name="jobRespon" rows="5" placeholder="Fill the Job Duties here "></textarea>
+
+            <label for="jsalary">Job Salary</label>
+            <input id="jsalary" type="text" class="input-control form-control" name="jobSalary" placeholder="Rate for the role" />
+
+
+            <label for="jlocation">Location</label>
+            <select type="text" id="selectjoLocation" name="jobLocation" class="input-control form-control" style="font-size:small" placeholder="Select Location">
+                <option>Auckland</option>
+                <option>Wellington</option>
+                <option>Christchurch</option>
+                <option>Hamilton</option>
+                <option>Tauranga</option>
+                <option>Napier and Hastings</option>
+                <option>Dunedin</option>
+                <option>Palmerston North</option>
+                <option>New Plymouth</option>
+                <option>Nelson</option>
+            </select>
+
+
+            <label for="jcontact">Contact Num</label>
+            <input id="jcontact" type="tel" class="input-control form-control" name="jobContactNum" placeholder="Contact Num" />
+
+            <label for="jobemail">Contact Email</label>
+            <input id="jobemail" type="email" class="input-control form-control" name="jobContactEmail" placeholder="Email Address" />
+
+            <label for="eFKID">Employer ID</label>
+            <input id="eFKID" type="text" class="input-control form-control" name="fk_eID" placeholder="Enter you employer ID here" />
+
+            <button class="input-control form-control btnAddingJob" id="btnAdd" type="submit" style="margin-top:5px">Add</button>
+        </div>
+    </form>
+</div>
+

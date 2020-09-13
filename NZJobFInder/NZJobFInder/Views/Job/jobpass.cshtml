@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "jobpass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Here is the jobs that your company listed</h2>*@
+
+<div>
+    <table class="table">
+        <tr>
+            <td>@Model.jobTitle</td>
+            <td>@Model.jobRespon </td>
+            <td>@Model.jobSalary </td>
+            <td>@Model.jobLocation </td>
+            <td>@Model.jobContactNum </td>
+            <td>@Model.jobContactEmail </td>
+            <td>@Model.fk_eID </td>
+        </tr>
+    </table>
+</div>
+
+
+

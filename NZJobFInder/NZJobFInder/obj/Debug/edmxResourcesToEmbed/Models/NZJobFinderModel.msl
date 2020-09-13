@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NZJobFinderModelStoreContainer" CdmEntityContainer="NZJobFinderEntities">
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="NZJobFinderModel.Employer">
+        <MappingFragment StoreEntitySet="Employer">
+          <ScalarProperty Name="employerId" ColumnName="employerId" />
+          <ScalarProperty Name="employerName" ColumnName="employerName" />
+          <ScalarProperty Name="employerAddress" ColumnName="employerAddress" />
+          <ScalarProperty Name="employerPhoneNum" ColumnName="employerPhoneNum" />
+          <ScalarProperty Name="employerUserName" ColumnName="employerUserName" />
+          <ScalarProperty Name="employerPassword" ColumnName="employerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Feedbacks">
+      <EntityTypeMapping TypeName="NZJobFinderModel.Feedback">
+        <MappingFragment StoreEntitySet="Feedback">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fullName" ColumnName="fullName" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="NZJobFinderModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="jobTitle" ColumnName="jobTitle" />
+          <ScalarProperty Name="jobRespon" ColumnName="jobRespon" />
+          <ScalarProperty Name="jobSalary" ColumnName="jobSalary" />
+          <ScalarProperty Name="jobLocation" ColumnName="jobLocation" />
+          <ScalarProperty Name="jobContactNum" ColumnName="jobContactNum" />
+          <ScalarProperty Name="jobContactEmail" ColumnName="jobContactEmail" />
+          <ScalarProperty Name="fk_eID" ColumnName="fk_eID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

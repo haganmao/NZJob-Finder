@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container" style="background-color:#e5e6f1;width:100%;margin-top:52px">
+    <form method="post" class="formReg" id="form_reg" onsubmit="alert('Thank you for your registeration!')" action="~/employer/regpass">
+        <div class="form-group">
+            <p id="regsubtitle">Employers Please register here</p>
+            <label for="cname">Company Name</label>
+            <input id="cname" type="text" class="input-control form-control" name="employerName" placeholder="Company Name" required autofocus />
+            
+            <label for="addr">Address</label>
+            <input id="addr" type="text" class="input-control form-control" name="employerAddress" placeholder="Address" />
+
+            <label for="phnum">Phone Num</label>
+            <input id="phnum" type="tel" class="input-control form-control" name="employerPhoneNum" placeholder="Phone Num" />
+            
+            <label for="username">User Name</label>
+            <input id="username" type="text" class="input-control form-control" name="employerUserName" placeholder="User Name"  />
+            
+            <label for="epass">Password</label>
+            <input id="epass" type="password" class="input-control form-control" name="employerPassword" placeholder="Password" />
+            
+            <label for="eaddr">Email Address</label>
+            <input id="eaddr" type="email" class="input-control form-control" name="employerEmailAddress" placeholder="Email Address" />
+            
+            <button class="btnRegister form-control" id="btnSubmit" type="submit" style="margin-top:5px">Register</button>
+        </div>
+    </form>
+</div>
+
+

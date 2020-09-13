@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+
+</head>
+<body>
+    @*@Html.ActionLink("NZJobFinder", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" style="border:none;font-size:small;color:#FFFFFF" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <svg width="1em" height="1em" style="stroke:white;stroke-width:5;stroke-opacity:0.5" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    MENU
+                </button>
+                <a href="/" style="font-size:smaller;text-decoration-color:transparent;text-decoration:none;color:#FFFFFF">
+                    <img src="~/Content/Images/Logo0.svg" style="height:51px;width:35px;line-height:51px" />
+                    NZJobFinder
+                </a>
+            </div>
+
+            <div class="navbar-collapse collapse menulist">
+                <ul class="nav navbar-nav" style="float:right">
+                    <li>@Html.ActionLink("Register", "Index", "employer")</li>
+                    <li>@Html.ActionLink("Job Finder", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Job Add", "Index", "Job")</li>
+                    <li>@Html.ActionLink("Feedback", "Index", "Feedback")</li>
+                    <li>@Html.ActionLink("About", "Index", "About")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="body-content">
+        @RenderBody()
+    </div>
+
+    @*loading start*@
+    <div class="loadingwrapper">
+        <div class="la-square-jelly-box la-dark la-2x loading">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    @*loading end*@
+
+    @*footer start*@
+    <hr />
+    <br />
+    <center>
+        <a href="https://github.com/haganmao" style="text-decoration:none;color:#000000;font-size:smaller">
+            <img src="~/Content/Images/github-logo.png" style="height:16px;width:16px" />
+            Github
+        </a>
+    </center>
+    <center>
+        <span class="copyright" style="font-size:8px">&copy; @DateTime.Now.Year - NZJobFinder. All Rights Reserved.</span>
+    </center>
+
+    @*footer end*@
+
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".loadingwrapper").fadeOut(1000)
+            }, 1000);
+        });
+    </script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

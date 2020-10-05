@@ -13,28 +13,28 @@
     <Property Name="employerEmailAddress" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Jobs" Relationship="Self.FK__Job__fk_eID__276EDEB3" FromRole="Employer" ToRole="Job" />
   </EntityType>
-  <EntityType Name="Feedback">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
-    <Property Name="fullName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-    <Property Name="emailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="Job">
     <Key>
       <PropertyRef Name="JobId" />
     </Key>
     <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="jobTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="jobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="jobRespon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="jobSalary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="jobLocation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="jobContactNum" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="jobContactEmail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="jobLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="jobContactNum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="jobContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="fk_eID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Employer" Relationship="Self.FK__Job__fk_eID__276EDEB3" FromRole="Job" ToRole="Employer" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="feedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="feedEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="feedMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK__Job__fk_eID__276EDEB3">
     <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
@@ -48,10 +48,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Employers" EntityType="Self.Employer" />
-    <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
     <EntitySet Name="Jobs" EntityType="Self.Job" />
+    <EntitySet Name="Messages" EntityType="Self.Message" />
     <AssociationSet Name="FK__Job__fk_eID__276EDEB3" Association="Self.FK__Job__fk_eID__276EDEB3">
       <End Role="Employer" EntitySet="Employers" />
       <End Role="Job" EntitySet="Jobs" />

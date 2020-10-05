@@ -4,18 +4,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="container" style="background-color:#e5e6f1;width:100%;margin-top:52px">
-    <form method="post" class="formfeed" id="form_feed" onsubmit="alert('We will contact you soon, Thank you!')" action="~/Feedback/feedpass">
+    <form method="post" class="msg_pass" id="msgpass" onsubmit="alert('Thank you for your message!')" action="~/feedback/msgpass">
         <div class="form-group">
-            <p id="feedsubtitle">We aim to help you have a better experience on our site, So keep in touch</p>
+            <p id="msgSubtitle">We aim to help you have a better experience on our site, So keep in touch</p>
 
+            <label for="msgName">Your Name</label>
+            <input id="msgName" type="text" class="input-control form-control" name="feedName" placeholder="Your name" autofocus />
 
-            <input id="feedname" type="text" class="input-control form-control" name="fullName" placeholder="Your Name" required autofocus />
-            <input id="feedemail" type="text" class="input-control form-control" name="emailAddress" placeholder="Your email Address" />
-            <textarea id="feedemsg" type="textarea" class="input-control form-control" style="font-size:small" name="message" rows="10" placeholder="Leave your massage here "></textarea>
+            <label for="msgEmail">Email Address</label>
+            <input id="msgEmail" type="email" class="input-control form-control" name="feedEmail" placeholder="Your email address" />
 
-            <button class="btnSend form-control" id="btnSend" type="submit" style="margin-top:5px">Send</button>
+            <label for="msg">Message</label>
+            <input id="msg" type="text" class="input-control form-control" name="feedMessage" placeholder="Your message" />
+
+            <button class="btnSend form-control" id="btnMSGSending" type="submit" style="margin-top:5px">Send</button>
         </div>
     </form>
 </div>
-

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "searchbyKeyWord";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h1>Search results</h1>
+
+<hr style="border:5px solid #1e222d" />
+
+@{
+    if (ViewBag.jobList.Count > 0)
+    {
+        <article style="width:auto;text-align:left;">
+            <hr />
+            @foreach (var x in ViewBag.jobList)
+            {
+                <center>
+                    <div style="width:70%;display:inline-block;border:1px solid #1e222d;margin-top:3px;text-align:left;padding-left:10px">
+                        <h1 style="background-color:#1e222d;color:white;">@x.JobId</h1>
+                        <h3>@x.jobTitle</h3>
+                        <p>@x.jobLocation</p>
+                        <p>@x.jobSalary</p>
+                        <pre style="display:block;text-align:left;word-break:keep-all;word-wrap:break-word;margin-right:10px;">@x.jobRespon</pre>
+                        <p>@x.jobContactNum</p>
+                        <p>@x.jobContactEmail</p>
+                    </div>
+                </center>
+            }
+        </article>
+    }
+    else
+    {
+        <div>current no job availiable</div>
+    }
+}
+
+
+
+
+

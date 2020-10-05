@@ -4,16 +4,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <table class="table">
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+<h1>Register Success!</h1>
+<hr style="border:5px solid #1e222d" />
+
+<table class="table table-hover">
+    <thead>
         <tr>
+            <th>Emplyer ID</th>
+            <th>Company Name</th>
+            <th>Employer Address</th>
+            <th>Employer PhoneNumber</th>
+            <th>Employer Username</th>
+            <th>Employer EmailAddress</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.employerId</td>
             <td>@Model.employerName </td>
             <td>@Model.employerAddress </td>
             <td>@Model.employerPhoneNum </td>
             <td>@Model.employerUserName </td>
-            <td>@Model.employerPassword </td>
             <td>@Model.employerEmailAddress </td>
         </tr>
-    </table>
-</div>
+    </tbody>
+</table>
+
 

@@ -100,10 +100,6 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
-    <Content Include="App_Data\NZJobFinder.mdf" />
-    <Content Include="App_Data\NZJobFinder_log.ldf">
-      <DependentUpon>NZJobFinder.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -140,7 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\employerController.cs" />
-    <Compile Include="Controllers\FeedbackController.cs" />
+    <Compile Include="Controllers\feedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
     <Compile Include="Global.asax.cs">
@@ -149,10 +145,10 @@
     <Compile Include="Models\Employer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Feedback.cs">
+    <Compile Include="Models\Job.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Job.cs">
+    <Compile Include="Models\Message.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -186,8 +182,11 @@
     <Content Include="Views\employer\regpass.cshtml" />
     <Content Include="Views\Job\Index.cshtml" />
     <Content Include="Views\Job\jobpass.cshtml" />
-    <Content Include="Views\Feedback\Index.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\feedback\Index.cshtml" />
+    <Content Include="Views\feedback\msgpass.cshtml" />
+    <Content Include="Views\Home\searchbyKeyWord.cshtml" />
+    <Content Include="Views\Job\jobDelete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

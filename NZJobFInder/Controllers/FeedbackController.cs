@@ -6,26 +6,30 @@ using System.Web.Mvc;
 using NZJobFInder.Models;
 namespace NZJobFInder.Controllers
 {
-    public class FeedbackController : Controller
+    public class feedbackController : Controller
     {
-        // GET: Feedback
+        // GET: feedback
         public ActionResult Index()
         {
             return View();
         }
 
-        public string feedpass(Feedback feedback) {
+        //save feedback to db
+        public ActionResult msgpass([Bind(Include = "feedName,feedEmail,feedMessage")]Message message) {
 
-            try
-            {
-                Database1Entities db = new Database1Entities();
-                db.Feedbacks.Add(feedback);
+            List<Message> msgList = new List<Message>();
+
+            msgList.Count();
+            using (Database1Entities1 db = new Database1Entities1())
+            {    
+                db.Messages.Add(message);
                 db.SaveChanges();
-                return "feedback saved success";
+                var msg = (from m in db.Messages orderby m.Id select m).ToList();
+                ViewBag.msgList = msg;
+                return View();
             }
-            catch {
-                return "feedback saved fail";
-            }
-        }
+                    
+        } 
+
     }
 }

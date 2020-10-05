@@ -4,21 +4,91 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*<h2>Here is the jobs that your company listed</h2>*@
 
-<div>
-    <table class="table">
-        <tr>
-            <td>@Model.jobTitle</td>
-            <td>@Model.jobRespon </td>
-            <td>@Model.jobSalary </td>
-            <td>@Model.jobLocation </td>
-            <td>@Model.jobContactNum </td>
-            <td>@Model.jobContactEmail </td>
-            <td>@Model.fk_eID </td>
-        </tr>
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+<form method="GET" action="~/Job/jobDelete">
+    <h1>Delete Job</h1>
+    <hr style="border:5px solid #1e222d" />
+    <div class="deletebox">
+        <div class="col-sm-2">
+            <label for="jobT">Title</label>
+            <input type="text" class="form-control" id="jobT" name="jobTitle" placeholder="Enter a Title" style="font-size:small">
+        </div>
+        <div class="col-sm-2">
+            <label for="jId">Job ID</label>
+            <input type="text" id="jId" name="JobId" class="form-control" style="font-size:small" placeholder="Enter a Job ID">
+        </div>
+        <div class="col-sm-1">
+            <label style="visibility:hidden">Delete</label>
+            <button type="submit" class="form-control">Delete</button>
+        </div>
+    </div>
+</form>
+
+
+
+@*<div style="width:100%;overflow:auto">
+    <h1>Recently Added Job</h1>
+    <hr style="border:5px solid #1e222d" />
+    <table style="width:auto" class="table table-hover">
+
+        <thead>
+            <tr>
+                <th>Job Id</th>
+                <th>Job Title</th>
+                <th>Job Salary</th>
+                <th>Job Location</th>
+                <th>Job ContactNumber</th>
+                <th>Job ContactEmail</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.JobId</td>
+                <td>@Model.jobTitle</td>
+                <td>@Model.jobSalary </td>
+                <td>@Model.jobLocation </td>
+                <td>@Model.jobContactNum </td>
+                <td>@Model.jobContactEmail </td>
+            </tr>
+        </tbody>
     </table>
-</div>
+</div>*@
+
+<br />
+<br />
+<br />
+<br />
+
+
+<article style="width:auto;text-align:left;">
+    <h1>Job List</h1>
+    <hr style="border:5px solid #1e222d" />
+    <hr />
+    @foreach (var j in ViewBag.jobPassList)
+    {
+        <center>
+            <div style="width:70%;display:inline-block;border:1px solid #1e222d;margin-top:3px;text-align:left;padding-left:10px">
+                <h1 style="background-color:#1e222d;color:white;">@j.JobId</h1>
+                <h3>@j.jobTitle</h3>
+                <p>@j.jobLocation</p>
+                <p>@j.jobSalary</p>
+                <pre style="display:block;text-align:left;word-break:keep-all;word-wrap:break-word;margin-right:10px;">@j.jobRespon</pre>
+                <p>@j.jobContactNum</p>
+                <p>@j.jobContactEmail</p>
+            </div>
+        </center>
+    }
+</article>
+
 
 
 

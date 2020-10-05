@@ -4,37 +4,38 @@
 }
 
 
-
-<div class="searchbox">
-    <div class="searchfix" style="margin-left:15px">
-        <div class="col-sm-3">
-            <label for="keyword">What</label>
-            <input type="text" class="form-control" id="keyword" placeholder="Enter keywords" style="font-size:small">
-        </div>
-        <div class="col-sm-3">
-            <label>Classification</label>
-            <select type="text" id="selectClassfication" class="form-control" style="font-size:small" placeholder="Any Classification">
-                <option>Accounting</option>
-                <option>Banking</option>
-                <option>Construction</option>
-                <option>Design</option>
-                <option>Engineering</option>
-                <option>Farming</option>
-                <option>Government</option>
-                <option>Human Resources</option>
-                <option>Information & Communication Technology </option>
-            </select>
-        </div>
-        <div class="col-sm-3">
-            <label for="location">Where</label>
-            <input type="text" id="location" class="form-control" style="font-size:small" placeholder="Enter Location">
-        </div>
-        <div class="col-sm-2">
-            <label style="visibility:hidden">search</label>
-            <button class="form-control">Finder</button>
+<form action="~/Home/searchbyKeyWord">
+    <div class="searchbox">
+        <div class="searchfix" style="margin-left:15px">
+            <div class="col-sm-3">
+                <label for="keyword">What</label>
+                <input type="text" class="form-control" id="jobT" name="jobTitle" placeholder="Enter keywords" style="font-size:small">
+            </div>
+            <div class="col-sm-3">
+                <label>Classification</label>
+                <select type="text" id="selectClassfication" class="form-control" style="font-size:small" placeholder="Any Classification">
+                    <option>Accounting</option>
+                    <option>Banking</option>
+                    <option>Construction</option>
+                    <option>Design</option>
+                    <option>Engineering</option>
+                    <option>Farming</option>
+                    <option>Government</option>
+                    <option>Human Resources</option>
+                    <option>Information & Communication Technology </option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <label for="location">Where</label>
+                <input type="text" id="location" name="jobLocation" class="form-control" style="font-size:small" placeholder="Enter Location">
+            </div>
+            <div class="col-sm-2">
+                <label style="visibility:hidden">search</label>
+                <button type="submit" class="form-control">Finder</button>
+            </div>
         </div>
     </div>
-</div>
+</form>
 <div class="container" style="width:100%;overflow:hidden;height:100%;background-color:#e5e6f1">
     <div class="row">
         <div class="col-md-6">
@@ -55,7 +56,7 @@
 <div class="container" style="overflow:hidden">
     <div class="row">
         <div class="imgfind">
-            <img src="~/Content/Images/dream-job.png" class="img-fluid" alt="searchJob" >
+            <img src="~/Content/Images/dream-job.png" class="img-fluid" alt="searchJob" style="height:100%;width:100%" >
         </div>
     </div>
 </div>

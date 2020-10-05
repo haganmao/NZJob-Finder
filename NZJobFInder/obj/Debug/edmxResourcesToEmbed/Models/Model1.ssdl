@@ -12,27 +12,27 @@
     <Property Name="employerPassword" Type="varchar" MaxLength="25" />
     <Property Name="employerEmailAddress" Type="varchar" MaxLength="25" />
   </EntityType>
-  <EntityType Name="Feedback">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="fullName" Type="varchar" MaxLength="25" />
-    <Property Name="emailAddress" Type="varchar" MaxLength="20" />
-    <Property Name="message" Type="text" />
-  </EntityType>
   <EntityType Name="Job">
     <Key>
       <PropertyRef Name="JobId" />
     </Key>
     <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="jobTitle" Type="varchar" MaxLength="20" />
+    <Property Name="jobTitle" Type="varchar" MaxLength="50" />
     <Property Name="jobRespon" Type="text" />
     <Property Name="jobSalary" Type="text" />
-    <Property Name="jobLocation" Type="varchar" MaxLength="15" />
-    <Property Name="jobContactNum" Type="varchar" MaxLength="15" />
-    <Property Name="jobContactEmail" Type="varchar" MaxLength="25" />
+    <Property Name="jobLocation" Type="text" />
+    <Property Name="jobContactNum" Type="varchar" MaxLength="30" />
+    <Property Name="jobContactEmail" Type="varchar" MaxLength="50" />
     <Property Name="fk_eID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="feedName" Type="varchar" MaxLength="50" />
+    <Property Name="feedEmail" Type="varchar" MaxLength="50" />
+    <Property Name="feedMessage" Type="text" />
   </EntityType>
   <Association Name="FK__Job__fk_eID__276EDEB3">
     <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
@@ -48,8 +48,8 @@
   </Association>
   <EntityContainer Name="Database1ModelStoreContainer">
     <EntitySet Name="Employer" EntityType="Self.Employer" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Job__fk_eID__276EDEB3" Association="Self.FK__Job__fk_eID__276EDEB3">
       <End Role="Employer" EntitySet="Employer" />
       <End Role="Job" EntitySet="Job" />

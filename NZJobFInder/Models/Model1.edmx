@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employer">
           <Key>
             <PropertyRef Name="employerId" />
@@ -17,27 +17,27 @@
           <Property Name="employerPassword" Type="varchar" MaxLength="25" />
           <Property Name="employerEmailAddress" Type="varchar" MaxLength="25" />
         </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="fullName" Type="varchar" MaxLength="25" />
-          <Property Name="emailAddress" Type="varchar" MaxLength="20" />
-          <Property Name="message" Type="text" />
-        </EntityType>
         <EntityType Name="Job">
           <Key>
             <PropertyRef Name="JobId" />
           </Key>
           <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="jobTitle" Type="varchar" MaxLength="20" />
+          <Property Name="jobTitle" Type="varchar" MaxLength="50" />
           <Property Name="jobRespon" Type="text" />
           <Property Name="jobSalary" Type="text" />
-          <Property Name="jobLocation" Type="varchar" MaxLength="15" />
-          <Property Name="jobContactNum" Type="varchar" MaxLength="15" />
-          <Property Name="jobContactEmail" Type="varchar" MaxLength="25" />
+          <Property Name="jobLocation" Type="text" />
+          <Property Name="jobContactNum" Type="varchar" MaxLength="30" />
+          <Property Name="jobContactEmail" Type="varchar" MaxLength="50" />
           <Property Name="fk_eID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="feedName" Type="varchar" MaxLength="50" />
+          <Property Name="feedEmail" Type="varchar" MaxLength="50" />
+          <Property Name="feedMessage" Type="text" />
         </EntityType>
         <Association Name="FK__Job__fk_eID__276EDEB3">
           <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
@@ -53,15 +53,14 @@
         </Association>
         <EntityContainer Name="Database1ModelStoreContainer">
           <EntitySet Name="Employer" EntityType="Self.Employer" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Job" EntityType="Self.Job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Job__fk_eID__276EDEB3" Association="Self.FK__Job__fk_eID__276EDEB3">
             <End Role="Employer" EntitySet="Employer" />
             <End Role="Job" EntitySet="Job" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Database1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -78,28 +77,28 @@
           <Property Name="employerEmailAddress" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Jobs" Relationship="Self.FK__Job__fk_eID__276EDEB3" FromRole="Employer" ToRole="Job" />
         </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="fullName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="emailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Job">
           <Key>
             <PropertyRef Name="JobId" />
           </Key>
           <Property Name="JobId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="jobTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="jobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="jobRespon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="jobSalary" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="jobLocation" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="jobContactNum" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="jobContactEmail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="jobLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="jobContactNum" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="jobContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="fk_eID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employer" Relationship="Self.FK__Job__fk_eID__276EDEB3" FromRole="Job" ToRole="Employer" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="feedEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="feedMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__Job__fk_eID__276EDEB3">
           <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
@@ -113,10 +112,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Database1Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Database1Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employers" EntityType="Self.Employer" />
-          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
           <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="Messages" EntityType="Self.Message" />
           <AssociationSet Name="FK__Job__fk_eID__276EDEB3" Association="Self.FK__Job__fk_eID__276EDEB3">
             <End Role="Employer" EntitySet="Employers" />
             <End Role="Job" EntitySet="Jobs" />
@@ -127,7 +126,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+        <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
           <EntitySetMapping Name="Employers">
             <EntityTypeMapping TypeName="Database1Model.Employer">
               <MappingFragment StoreEntitySet="Employer">
@@ -138,16 +137,6 @@
                 <ScalarProperty Name="employerUserName" ColumnName="employerUserName" />
                 <ScalarProperty Name="employerPassword" ColumnName="employerPassword" />
                 <ScalarProperty Name="employerEmailAddress" ColumnName="employerEmailAddress" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Feedbacks">
-            <EntityTypeMapping TypeName="Database1Model.Feedback">
-              <MappingFragment StoreEntitySet="Feedback">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="fullName" ColumnName="fullName" />
-                <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
-                <ScalarProperty Name="message" ColumnName="message" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -162,6 +151,16 @@
                 <ScalarProperty Name="jobContactNum" ColumnName="jobContactNum" />
                 <ScalarProperty Name="jobContactEmail" ColumnName="jobContactEmail" />
                 <ScalarProperty Name="fk_eID" ColumnName="fk_eID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="Database1Model.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="feedName" ColumnName="feedName" />
+                <ScalarProperty Name="feedEmail" ColumnName="feedEmail" />
+                <ScalarProperty Name="feedMessage" ColumnName="feedMessage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

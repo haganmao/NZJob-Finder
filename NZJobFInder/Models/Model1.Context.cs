@@ -13,10 +13,10 @@ namespace NZJobFInder.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database1Entities : DbContext
+    public partial class Database1Entities1 : DbContext
     {
-        public Database1Entities()
-            : base("name=Database1Entities")
+        public Database1Entities1()
+            : base("name=Database1Entities1")
         {
         }
     
@@ -26,7 +26,7 @@ namespace NZJobFInder.Models
         }
     
         public virtual DbSet<Employer> Employers { get; set; }
-        public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Job> Jobs { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
     }
 }

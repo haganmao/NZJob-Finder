@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
     <EntitySetMapping Name="Employers">
       <EntityTypeMapping TypeName="Database1Model.Employer">
         <MappingFragment StoreEntitySet="Employer">
@@ -11,16 +11,6 @@
           <ScalarProperty Name="employerUserName" ColumnName="employerUserName" />
           <ScalarProperty Name="employerPassword" ColumnName="employerPassword" />
           <ScalarProperty Name="employerEmailAddress" ColumnName="employerEmailAddress" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Feedbacks">
-      <EntityTypeMapping TypeName="Database1Model.Feedback">
-        <MappingFragment StoreEntitySet="Feedback">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="fullName" ColumnName="fullName" />
-          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
-          <ScalarProperty Name="message" ColumnName="message" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -35,6 +25,16 @@
           <ScalarProperty Name="jobContactNum" ColumnName="jobContactNum" />
           <ScalarProperty Name="jobContactEmail" ColumnName="jobContactEmail" />
           <ScalarProperty Name="fk_eID" ColumnName="fk_eID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="Database1Model.Message">
+        <MappingFragment StoreEntitySet="Message">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="feedName" ColumnName="feedName" />
+          <ScalarProperty Name="feedEmail" ColumnName="feedEmail" />
+          <ScalarProperty Name="feedMessage" ColumnName="feedMessage" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

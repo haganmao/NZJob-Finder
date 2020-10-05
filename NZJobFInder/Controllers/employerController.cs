@@ -26,16 +26,16 @@ namespace NZJobFInder.Controllers
         //}
 
         //SAVE employer info to db
-        public string regpass(Employer employer) {
+        public ActionResult regpass(Employer employer) {
             try
             {
-                Database1Entities db = new Database1Entities();
+                Database1Entities1 db = new Database1Entities1();
                 db.Employers.Add(employer);
                 db.SaveChanges();
-                return "Registration pass";
+                return View(employer);
             }
             catch {
-                return "Registration FAIL";
+                return View(employer);
             }
         }
     }

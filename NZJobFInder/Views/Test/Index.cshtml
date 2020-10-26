@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test</h2>
+<ul>
+
+    @{
+        foreach (var s in ViewBag.stus)
+        {
+
+            <li>
+                @s
+            </li>
+
+        }
+
+    }
+</ul>

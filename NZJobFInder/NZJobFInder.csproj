@@ -139,6 +139,7 @@
     <Compile Include="Controllers\feedbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,6 +188,7 @@
     <Content Include="Views\feedback\msgpass.cshtml" />
     <Content Include="Views\Home\searchbyKeyWord.cshtml" />
     <Content Include="Views\Job\jobDelete.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -10,9 +10,13 @@
     <form method="post" class="formReg" id="form_reg" onsubmit="alert('Thank you for your registeration!')" action="~/employer/regpass">
         <div class="form-group">
             <p id="regsubtitle">Employers Please register here</p>
-            <label for="cname">Company Name</label>
-            <input id="cname" type="text" class="input-control form-control" name="employerName" placeholder="Company Name" required autofocus />
+            @*<label for="cname">Company Name</label>
+            <input id="employerName" class="input-control form-control" name="employerName" id ="employerName" placeholder="Company Name" required autofocus />*@
             
+            @Html.Label("Employer Name")
+            @Html.TextBox("employerName",null, new { @class = "form-control" , @placeholder = "Employer Name"})
+            @Html.ValidationMessage("employerName", "", new { @class = "text-danger"})
+
             <label for="addr">Address</label>
             <input id="addr" type="text" class="input-control form-control" name="employerAddress" placeholder="Address" />
 
@@ -33,4 +37,6 @@
     </form>
 </div>
 
-
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-validate/1.9.0/jquery.validate.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery-validation-unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"></script>

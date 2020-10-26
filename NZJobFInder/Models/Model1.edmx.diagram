@@ -7,7 +7,7 @@
       <Diagram DiagramId="55e4fdc7661b4c12819e2a5267b89353" Name="Diagram1">
         <EntityTypeShape EntityType="Database1Model.Employer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Database1Model.Job" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database1Model.Message" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Message" Width="1.5" PointX="1.5" PointY="5.5" IsExpanded="true" />
         <AssociationConnector Association="Database1Model.FK__Job__fk_eID__276EDEB3" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
